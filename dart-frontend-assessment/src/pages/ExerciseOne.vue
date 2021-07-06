@@ -28,12 +28,47 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
 .hero-banner {
-	width: 100%;
+	position: relative;
+	min-height: 650px;
+	background-image: url(http://via.placeholder.com/1920x650);
+    background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	@include media-breakpoint-down(md) {
+		min-height: 600px;
+		background-image: url(http://via.placeholder.com/600x600);
+	}
+
+	&__heading, &__subheading {
+		z-index: 1;
+	}
 
 	&__heading {
-		margin: 0;
+		margin-bottom: 1rem;
+		font-weight: bold;
+		font-size: 5rem;
+	}
+
+	&__subheading {
+		font-size: 2.5rem;
+		font-weight: 400;
+		letter-spacing: 1px;
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		opacity: 0.3;
+		background-color: #000;
 	}
 }
 </style>
