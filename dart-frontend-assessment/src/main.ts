@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "@/App.vue";
 import router from "@/utils/routes";
+import "bootstrap";
 
 const assessment = createApp(App);
 
