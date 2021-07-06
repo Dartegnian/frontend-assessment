@@ -1,0 +1,20 @@
+[
+	{
+		"post_id": 1,
+		"post_title": "Post 1",
+		"post_image": "http://via.placeholder.com/400x300",
+		"post_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+	},
+	{
+		"post_id": 2,
+		"post_title": "Post 2",
+		"post_image": "http://via.placeholder.com/400x300",
+		"post_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+	},
+	{
+		"post_id": 3,
+		"post_title": "Post 3",
+		"post_image": "http://via.placeholder.com/400x300",
+		"post_summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+	}
+]
