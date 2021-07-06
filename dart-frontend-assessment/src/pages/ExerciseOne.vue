@@ -1,7 +1,7 @@
 <template>
-	<header class="hero-banner">
-		<h1 class="hero-banner__heading">{{ heading }}</h1>
-		<h3 class="hero-banner__subheading">{{ subheading }}</h3>
+	<header class="hero-banner w-100 d-flex flex-column align-items-center justify-content-center">
+		<h1 class="hero-banner__heading text-light">{{ heading }}</h1>
+		<h3 class="hero-banner__subheading text-light">{{ subheading }}</h3>
 	</header>
 	<section class="posts-area">
 		<Posts v-for="post in data" :key="post.post_id" v-bind:postData="post"/>
@@ -20,7 +20,7 @@ export default defineComponent({
 	},
 	data() {
 		return {
-			heading: "Hello, Developer!",
+			heading: "Hello Developer!",
 			subheading: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
 			data,
 		};
