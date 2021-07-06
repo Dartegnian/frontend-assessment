@@ -6,7 +6,7 @@ import ExerciseOne from "@/pages/ExerciseOne.vue";
 
 const routes: Array<{ path: string, component: Component }> = [
 	{ path: "/", component: LandingPage },
-	{ path: "/exercise-one", component: ExerciseOne }
+	{ path: "/exercise-one", component: ExerciseOne },
 ]
 
 const router: Router = createRouter({
