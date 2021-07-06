@@ -1,7 +1,7 @@
 <template>
-	<header>
-		<h1>{{ heading }}</h1>
-		<h3>{{ subheading }}</h3>
+	<header class="hero-banner">
+		<h1 class="hero-banner__heading">{{ heading }}</h1>
+		<h3 class="hero-banner__subheading">{{ subheading }}</h3>
 	</header>
 	<section class="posts-area">
 		<Posts v-for="post in data" :key="post.post_id" v-bind:postData="post"/>
@@ -28,5 +28,12 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style lang="scss">
+.hero-banner {
+	width: 100%;
+
+	&__heading {
+		margin: 0;
+	}
+}
 </style>
