@@ -24,6 +24,7 @@
         "object-curly-spacing": ["error", "always"],
         "indent": ["error", "tab"],
 		"no-tabs": ["error", { "allowIndentationTabs": true }],
-		"new-cap": ["error", { "capIsNew": false }]
+		"new-cap": ["error", { "capIsNew": false }],
+		"max-len": [ "error", { "code": 100 } ]
     }
 }
