@@ -1,20 +1,21 @@
 <template>
-	<div v-if="getIsMobile && contentData.length != 0">
-		<MobileAccordion
-			v-bind:sectionData="contentData"
-			v-bind:activeSelection="getSelection"
-			@change-selection="setActiveTab"
-		/>
-	</div>
-	<div v-else-if="!getIsMobile && contentData.length != 0">
-		<DesktopTabs
-			v-bind:sectionData="contentData"
-			v-bind:activeSelection="getSelection"
-			@change-selection="setActiveTab"
-		/>
-	</div>
-	<div v-else class="spinner-border" role="status">
-	</div>
+	<main class="page-exercise-two">
+		<section class="container d-flex justify-content-center align-items-center mt-5">
+			<MobileAccordion
+				v-if="getIsMobile && contentData.length != 0"
+				v-bind:sectionData="contentData"
+				v-bind:activeSelection="getSelection"
+				@change-selection="setActiveTab"
+			/>
+			<DesktopTabs
+				v-else-if="!getIsMobile && contentData.length != 0"
+				v-bind:sectionData="contentData"
+				v-bind:activeSelection="getSelection"
+				@change-selection="setActiveTab"
+			/>
+			<span v-else class="spinner-border" role="status"></span>
+		</section>
+	</main>
 </template>
 
 <script lang="ts">
