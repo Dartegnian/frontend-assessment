@@ -1,5 +1,5 @@
 <template>
-	<article class="desktop-tabs mt-5">
+	<article class="desktop-tabs w-100">
 		<header class="desktop-tabs__header d-flex justify-content-between">
 			<button
 				:key="section.title"
@@ -37,4 +37,33 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@import "../../assets/scss/colors";
+@import "../../assets/scss/mixins";
+
+.desktop-tabs {
+	&__tab {
+		width: 23%;
+		height: 3rem;
+		@include set-box-styling;
+		@include set-box-transitions;
+
+		&:hover {
+			color: $light-primary;
+			box-shadow: 0 12px 30px 0 rgb(0, 0, 0, 20%);
+		}
+
+		&--active {
+			color: #fff;
+			@include set-theme-gradient;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+
+	&__content-area {
+		@include set-box-styling;
+	}
+}
 </style>
