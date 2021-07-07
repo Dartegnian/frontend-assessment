@@ -59,4 +59,39 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@import "../../assets/scss/colors";
+@import "../../assets/scss/mixins";
+
+.mobile-accordion  {
+	&__header {
+		height: 3rem;
+		align-items: center;
+		@include set-box-styling;
+		@include set-box-transitions;
+
+		&--active {
+			color: #fff;
+			@include set-theme-gradient;
+		}
+	}
+
+	&__content-area {
+		overflow: hidden;
+		max-height: 0rem;
+		text-align: justify;
+		transition: all 0.4s ease;
+
+		&--active {
+			max-height: 12rem;
+			margin-top: 1rem;
+			padding: 1rem;
+		}
+
+		&--collapsed {
+			max-height: 0rem;
+			margin: 0rem;
+			padding: 0rem;
+		}
+	}
+}
 </style>
