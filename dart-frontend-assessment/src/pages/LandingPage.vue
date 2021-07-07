@@ -1,6 +1,7 @@
 <template>
   <h1>Click the links to go to an exercise</h1>
   <router-link to="/exercise-one">Exercise One</router-link>
+  <router-link to="/exercise-two">Exercise Two</router-link>
 </template>
 
 <script lang="ts">
