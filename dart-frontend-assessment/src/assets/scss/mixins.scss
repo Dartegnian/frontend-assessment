@@ -1,0 +1,19 @@
+@import "colors";
+
+@mixin set-theme-gradient {
+	background: $light-primary;
+    background: linear-gradient(to bottom,$light-primary 0%,$light-secondary);
+}
+
+@mixin set-box-styling {
+	background-color: #fff;
+	box-shadow: 0 2px 8px rgb(0, 0, 0, 5%);
+	border: 1px solid #e5e9ec;
+}
+
+@mixin set-box-transitions {
+	transition-property: -webkit-box-shadow,-webkit-transform;
+	transition-property: box-shadow,transform,-webkit-box-shadow,-webkit-transform;
+	transition-duration: .6s;
+	transition-timing-function: cubic-bezier(.16,1,.29,.99);
+}
