@@ -1,30 +1,57 @@
 <template>
-	<section
-		:key="section.title"
-		@click="changeSelection(index)"
-		v-for="(section, index) in sectionData"
-		v-bind:class="
-			'desktop-tabs' + (activeSelection === index ? ' active' : '')
-		"
-	>
-		<header>
-			{{ section.title }}
-		</header>
-		<article v-html="section.content"></article>
-	</section>
+	<div class="mobile-accordion d-flex flex-column">
+		<article
+			:key="section.title"
+			@click="changeSelection(index, activeSelection)"
+			v-for="(section, index) in sectionData"
+			v-bind:class="'mobile-accordion__item' +
+				(activeSelection === index ? ' mobile-accordion__item--active' : '') +
+				(
+					activeSelection === index && isCollapsed
+					? ' mobile-accordion__item--collapsed'
+					: ''
+				)
+			"
+		>
+			<header v-bind:class="'mobile-accordion__header d-flex justify-content-center' +
+				(activeSelection === index ? ' mobile-accordion__header--active' : '')
+			">
+				{{ section.title }}
+			</header>
+			<section
+				v-bind:class="'mobile-accordion__content-area' +
+					(activeSelection === index ? ' mobile-accordion__content-area--active' : '') +
+					(isCollapsed ? ' mobile-accordion__content-area--collapsed' : '')
+				"
+				v-html="section.content"
+			></section>
+		</article>
+	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent({
+	data() {
+		return {
+			isCollapsed: false,
+		};
+	},
 	props: {
 		activeSelection: Number,
 		sectionData: Array,
 	},
 	methods: {
-		changeSelection(newSelection: Number) {
-			this.$emit("changeSelection", newSelection);
+		changeSelection(newSelection: Number, activeSelection: Number) {
+			if (newSelection !== activeSelection && this.isCollapsed) {
+				this.$emit("changeSelection", newSelection);
+				this.isCollapsed = !this.isCollapsed;
+			} else if (newSelection !== activeSelection) {
+				this.$emit("changeSelection", newSelection);
+			} else {
+				this.isCollapsed = !this.isCollapsed;
+			}
 		},
 	},
 	emits: ["changeSelection"],
