@@ -44,16 +44,17 @@ export default defineComponent({
 	&__tab {
 		width: 23%;
 		height: 3rem;
+		transition: color linear .25s, box-shadow linear .25s;
 		@include set-box-styling;
-		@include set-box-transitions;
 
 		&:hover {
 			color: $light-primary;
-			box-shadow: 0 12px 30px 0 rgb(0, 0, 0, 20%);
+			box-shadow: 0 12px 15px 0 rgb(0, 0, 0, 20%);
 		}
 
 		&--active {
 			color: #fff;
+			box-shadow: 0 12px 30px 0 rgb(0, 0, 0, 20%);
 			@include set-theme-gradient;
 
 			&:hover {
