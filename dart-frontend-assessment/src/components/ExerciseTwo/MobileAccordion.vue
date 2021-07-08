@@ -75,15 +75,17 @@ export default defineComponent({
 @import "../../assets/scss/colors";
 @import "../../assets/scss/mixins";
 
-.mobile-accordion  {
+.mobile-accordion {
 	&__header {
 		height: 3rem;
 		align-items: center;
+		position: relative;
+		transition: color linear .25s, box-shadow linear .25s;
 		@include set-box-styling;
-		@include set-box-transitions;
 
 		&--active {
 			color: #fff;
+			box-shadow: 0 12px 30px 0 rgb(0 0 0 / 20%);
 			@include set-theme-gradient;
 		}
 	}
@@ -104,6 +106,21 @@ export default defineComponent({
 			max-height: 0rem;
 			margin: 0rem;
 			padding: 0rem;
+		}
+	}
+
+	&__triangle {
+		width: 2rem;
+		height: 2rem;
+		display: flex;
+		justify-content: center;
+		position: absolute;
+		right: 2%;
+		font-size: 1.3rem;
+		transition: transform linear 0.25s;
+
+		&--active {
+			transform: rotate(180deg);
 		}
 	}
 }
