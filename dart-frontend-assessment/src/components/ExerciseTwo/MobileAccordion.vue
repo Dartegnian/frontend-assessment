@@ -94,7 +94,7 @@ export default defineComponent({
 		overflow: hidden;
 		max-height: 0rem;
 		text-align: justify;
-		transition: all 0.4s ease;
+		transition: padding 0.4s linear, margin 0.4s linear, max-height 0.4s linear;
 
 		&--active {
 			max-height: 12rem;
