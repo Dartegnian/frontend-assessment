@@ -5,18 +5,31 @@
 			@click="changeSelection(index, activeSelection)"
 			v-for="(section, index) in sectionData"
 			v-bind:class="'mobile-accordion__item' +
-				(activeSelection === index ? ' mobile-accordion__item--active' : '') +
-				(
-					activeSelection === index && isCollapsed
+				(activeSelection === index && !isCollapsed
+					? ' mobile-accordion__item--active'
+					: '') +
+				(activeSelection === index && isCollapsed
 					? ' mobile-accordion__item--collapsed'
-					: ''
-				)
+					: '')
 			"
 		>
 			<header v-bind:class="'mobile-accordion__header d-flex justify-content-center' +
-				(activeSelection === index ? ' mobile-accordion__header--active' : '')
+				(activeSelection === index && !isCollapsed
+					? ' mobile-accordion__header--active'
+					: '') +
+				(activeSelection === index && isCollapsed
+					? ' mobile-accordion__header--collapsed'
+					: '')
 			">
 				{{ section.title }}
+				<i v-bind:class="'mobile-accordion__triangle' +
+					(activeSelection === index && !isCollapsed
+						? ' mobile-accordion__triangle--active'
+						: '') +
+					(activeSelection === index && isCollapsed
+						? ' mobile-accordion__triangle--collapsed'
+						: '')
+				">▼</i>
 			</header>
 			<section
 				v-bind:class="'mobile-accordion__content-area' +
